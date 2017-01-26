@@ -3,11 +3,10 @@
         (COND; conditional block start
          ((NULL? L) '()) ; is the list empty
          ;((NOT(LIST? CAR L))) ; is the first term of the list a literal?
-         (if (LIST? CAR L); if the first term of the list is another list...
-             (CONS (CDR L) (reverse-general (CAR L))) ; add the first 
-             (CONS (reverse-general (CDR L)) (CAR L))
-             )
-         )
+         ((LIST? CAR L) (CONS (CDR L) (reverse-general (CAR L)))); if the first term of the list is another list...
+             ;(CONS (CDR L) (reverse-general (CAR L))) ; add the first 
+         (NOT (LIST? CAR L) (CONS (reverse-general (CDR L)) (CAR L)))
+        )
      )
 
          
