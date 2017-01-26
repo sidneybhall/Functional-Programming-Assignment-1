@@ -1,5 +1,0 @@
-(DEFINE (reverse-general L)
-
-        
-        
-        )
